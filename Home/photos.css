@@ -1,9 +1,19 @@
+.background {
+    background: url("photo.jpg");
+	background-repeat: no-repeat;
+  background-attachment: fixed;
+     
+	 
+  background-size:1600px ;
+}
 img {
+	
 	width: 20%;
 	float: left;
 	margin: 6%;
 	border-radius: 50%; 
-	margin-bottom:0px;
+	margin-bottom:40px;
+
 
 }
 

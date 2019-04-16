@@ -8,7 +8,7 @@
 	text-align: left;
 
 	padding: 50px 60px 40px;
-	margin-top: 80px;
+	margin-top: 50px;
 	overflow: hidden;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .footer-distributed h3 span{
-	color:  #5383d3;
+	color:  #bc1e1b;
 }
 
 /* Footer links */
@@ -177,4 +177,4 @@
 	.footer-distributed form button{
 		float: none;
 	}
-}
+}*/
