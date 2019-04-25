@@ -48,12 +48,13 @@
   <div class='login_title'>
     <span>Welcome back to Perfect Mate</span>
   </div>
+  <form name="form1" action="login.html" onsubmit="return f1()">
   <div class='login_fields'>
     <div class='login_fields__user'>
       <div class='icon'>
         <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/user_icon_copy.png'>
       </div>
-      <input placeholder='First Name' type='text'>
+      <input name='first' placeholder='First Name' type='text' min='4'>
         <div class='validation'>
           <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/tick.png'>
         </div>
@@ -63,7 +64,7 @@
       <div class='icon'>
         <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/user_icon_copy.png'>
       </div>
-      <input placeholder='Last Name' type='text'>
+      <input name='last' placeholder='Last Name' type='text'min='4'>
         <div class='validation'>
           <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/tick.png'>
         </div>
@@ -73,7 +74,7 @@
       <div class='icon'>
         <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/user_icon_copy.png'>
       </div>
-      <input placeholder='Email' type='email'>
+      <input name='mail' placeholder='Email' type='email' required>
         <div class='validation'>
           <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/tick.png'>
         </div>
@@ -83,21 +84,21 @@
       <div class='icon'>
         <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/lock_icon_copy.png'>
       </div>
-      <input placeholder='New Password' type='password'>
+      <input id='pass1' placeholder='New Password' type='password' required>
     </div>
 	<div class='login_fields__password'>
       <div class='icon'>
         <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/lock_icon_copy.png'>
       </div>
-      <input placeholder='Confirm Password' type='password'>
+      <input id='pass2' placeholder='Confirm Password' type='password' required>
     </div>
 	
 	<div class='login_fields__user'>
       <div class='icon'>
         <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/user_icon_copy.png'>
       </div>
-      <select>
-	 <option selected disabled value="MALE">Select Gender</option>
+      <select name='gender' required>
+	 <option disabled value="MALE">Select Gender</option>
     <option value="MALE">Male</option>
     <option value="FEMALE">Female</option>
     </select>
@@ -107,16 +108,16 @@
       <div class='icon'>
         <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/user_icon_copy.png'>
       </div>
-      <input placeholder='Enter Your Age' type='number'>
+      <input id='age' name='age' placeholder='Enter Your Age' type='number' required>
       </input>
     </div>
-	
+	</form>
 	
 	
 	
 	
     <div class='login_fields__submit'>
-      <input type='submit' value='Log In'>
+      <input type='submit' value='Sign Up'>
       <div class='forgot'>
         <a href='#'>Forgotten password?</a>
       </div>
@@ -131,12 +132,32 @@
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
+<script>
+function f1()
+{
+	var x = document.forms["form1"]["first"].value;
+  if (x == "") {
+    alert("First name must be filled out");
+    return false;
+  }
+  x = document.forms["form1"]["last"].value;
+  if (x == "") {
+    alert("Last name must be filled out");
+    return false;
+  } 
   
-
-
-
-
+  if (document.getElementById("pass1").value!=document.getElementById("pass2").value) {
+    alert("Password should be same");
+    return false;
+  }
+  a=document.getElementById("age").value;
+  if(a<18)
+  {
+	alert("Age is not valid");
+	return false;
+  }
+ }
+</script>
 </body>
 
 </html>

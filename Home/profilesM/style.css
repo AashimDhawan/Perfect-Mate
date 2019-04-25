@@ -158,3 +158,6 @@ section:last-child {
 	margin-bottom: 3px;
 }
 
+.msgbox {
+display: none;
+}
